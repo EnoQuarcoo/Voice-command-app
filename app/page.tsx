@@ -6,8 +6,6 @@ import { useEffect, useRef, useState } from "react";
 import Recorder from "@/components/Recorder";
 import VoiceSynthesizer from "@/components/VoiceSynthesizer";
 import Messages from "@/components/Messages";
-import { SettingsIcon } from "lucide-react";
-import Image from "next/image";
 
 const initialState = {
   sender: "",
@@ -68,32 +66,20 @@ export default function Home() {
   console.log(messages);
 
   return (
-    <main className="bg-black h-screen overflow-y-scroll">
-      <header className="flex fixed top-0 justify-between text-white w-full p-5">
-        <Image
-          src="https://i.imgur.com/MCHWJZS.png
-          "
-          alt="Logo"
-          width={50}
-          height={50}
-        />
-
-        <SettingsIcon
-          className="p-2 m-2 rounded-full cursor-pointer bg-purple-600 text-black transition-all ease-in-out duration-150 hover:bg-purple-700 hover:text-white"
-          onClick={() => setDisplaySettings(!displaySettings)}
-          size={40}
-        />
+    <main >
+      <header >
+        
       </header>
 
-      <form action={formAction} className="flex flex-col bg-black">
-        <div className="flex-1 bg-gradient-to-b from-purple-500 to-black">
+      <form action={formAction} >
+        <div>
           <Messages messages={messages} />
         </div>
 
         <input type="file" name="audio" ref={fileRef} hidden />
         <button type="submit" hidden ref={submitButtonRef} />
 
-        <div className="fixed bottom-0 w-full overflow-hidden bg-black rounded-t-3xl">
+        <div>
           <Recorder uploadAudio={uploadAudio} />
           <div className="">
             <VoiceSynthesizer state={state} displaySettings={displaySettings} />

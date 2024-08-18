@@ -6,6 +6,12 @@ import {
   OpenAIClient,
 } from "@azure/openai";
 
+console.log("Azure Endpoint:", process.env.AZURE_ENDPOINT);
+console.log("Azure API Key:", process.env.AZURE_API_KEY);
+console.log("Azure Deployment Name:", process.env.AZURE_DEPLOYMENT_NAME);
+console.log("Azure Deployment Completions Name:", process.env.AZURE_DEPLOYMENT_COMPLETIONS_NAME);
+
+
 async function transcript(prevState: any, formData: FormData) {
   "use server";
 
